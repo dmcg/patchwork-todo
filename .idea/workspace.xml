@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response.">
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency.">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
     </list>
@@ -202,7 +202,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713085699748</updated>
       <workItem from="1713085701264" duration="2281000" />
-      <workItem from="1713170996538" duration="8914000" />
+      <workItem from="1713170996538" duration="9999000" />
     </task>
     <task id="LOCAL-00001" summary="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
       <option name="closed" value="true" />
@@ -260,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713178686106</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency.">
+      <option name="closed" value="true" />
+      <created>1713180105845</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713180105845</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +280,7 @@
     <MESSAGE value="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively." />
     <MESSAGE value="Update http4k version and improve test assertions&#10;&#10;The dependencies in build.gradle.kts have been updated to the latest http4k version. Two additional libraries for testing were included to improve the assertions in the unit tests. The test cases in AppTest.kt now use the http4k's strikt assertion API for more robust and readable tests." />
     <MESSAGE value="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response." />
+    <MESSAGE value="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency." />
   </component>
 </project>

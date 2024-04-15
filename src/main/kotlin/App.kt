@@ -6,19 +6,22 @@ import org.http4k.server.asServer
 
 fun main() {
     println("Something happened!!")
-    routes.asServer(Jetty(8080)).start()
+    val items = listOf("item1", "item2", "item3")
+    items.routes.asServer(Jetty(8080)).start()
 }
 
+// Leaving _ parameter to show options, should be internally consistent
 val rootHandler = { _: Request ->
     Response(status = Status.OK).body("Something happened!!")
 }
 
-val itemsHandler: HttpHandler = {
-    val items = listOf("item1", "item2", "item3")
-    Response(Status.OK).body(items.joinToString())
-}
+val List<String>.listHandler: HttpHandler
+    get() = {
+        Response(Status.OK).body(joinToString())
+    }
 
-val routes: HttpHandler = routes(
-    "/" bind Method.GET to rootHandler,
-    "/items" bind Method.GET to itemsHandler
-)
+val List<String>.routes: HttpHandler
+    get() = routes(
+        "/" bind Method.GET to rootHandler,
+        "/items" bind Method.GET to this.listHandler
+    )
