@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively.">
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,12 @@
                 <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
                 <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="patchwork-todo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -75,6 +82,7 @@
     "Gradle.Build patchwork-todo.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Tests in 'patchwork-todo.test'.executor": "Run",
+    "JUnit.AppTest.executor": "Run",
     "Kotlin.AppKt.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -89,7 +97,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.23793103",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -106,31 +117,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AppTest">
-    <configuration name="AppTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AppTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="Tests in 'patchwork-todo.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -153,6 +140,15 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AppKt" />
       <module name="patchwork-todo.main" />
@@ -162,7 +158,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AppTest" />
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="Gradle.Tests in 'patchwork-todo.test'" />
       </list>
@@ -185,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713085699748</updated>
       <workItem from="1713085701264" duration="2281000" />
-      <workItem from="1713170996538" duration="3942000" />
+      <workItem from="1713170996538" duration="6395000" />
     </task>
     <task id="LOCAL-00001" summary="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
       <option name="closed" value="true" />
@@ -203,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713173731278</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor HttpHandler and add App test&#10;&#10;The HttpHandler declaration has been moved to the end of the file in App.kt for better code organization. Additionally, a new test file, AppTest.kt, has been added to thoroughly test the application's functionality. This file includes a simple test that invokes a GET request on the '/root' endpoint.">
+      <option name="closed" value="true" />
+      <created>1713174970225</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713174970225</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively.">
+      <option name="closed" value="true" />
+      <created>1713175044853</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713175044853</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development." />
+    <MESSAGE value="Refactor HttpHandler and add App test&#10;&#10;The HttpHandler declaration has been moved to the end of the file in App.kt for better code organization. Additionally, a new test file, AppTest.kt, has been added to thoroughly test the application's functionality. This file includes a simple test that invokes a GET request on the '/root' endpoint." />
+    <MESSAGE value="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively." />
   </component>
 </project>
