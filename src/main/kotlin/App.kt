@@ -9,7 +9,8 @@ import org.http4k.server.asServer
 fun main() {
     println("Something happened!!")
 
-    val handler: HttpHandler = { Response(status = Status.OK).body("Something happened") }
 
     handler.asServer(Jetty(8080)).start()
 }
+
+val handler: HttpHandler = { Response(status = Status.OK).body("Something happened") }
