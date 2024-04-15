@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.http4k:http4k-core:4.9.9.0")
+    implementation("org.http4k:http4k-server-jetty:4.9.9.0")
     testImplementation(kotlin("test"))
 }
 
