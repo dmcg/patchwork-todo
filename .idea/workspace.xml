@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively.">
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response.">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
     </list>
@@ -82,7 +81,9 @@
     "Gradle.Build patchwork-todo.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Tests in 'patchwork-todo.test'.executor": "Run",
+    "JUnit.All in patchwork-todo.test.executor": "Run",
     "JUnit.AppTest.executor": "Run",
+    "JUnit.AppTest.testTodoItems.executor": "Run",
     "Kotlin.AppKt.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -117,7 +118,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="JUnit.All in patchwork-todo.test">
     <configuration name="Tests in 'patchwork-todo.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -140,11 +141,29 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="All in patchwork-todo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="patchwork-todo.test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AppTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testTodoItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppTest" />
+      <option name="METHOD_NAME" value="testTodoItems" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,7 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in patchwork-todo.test" />
         <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.AppTest.testTodoItems" />
         <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="Gradle.Tests in 'patchwork-todo.test'" />
       </list>
@@ -181,7 +202,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713085699748</updated>
       <workItem from="1713085701264" duration="2281000" />
-      <workItem from="1713170996538" duration="6395000" />
+      <workItem from="1713170996538" duration="8914000" />
     </task>
     <task id="LOCAL-00001" summary="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
       <option name="closed" value="true" />
@@ -215,7 +236,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713175044853</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update http4k version and improve test assertions&#10;&#10;The dependencies in build.gradle.kts have been updated to the latest http4k version. Two additional libraries for testing were included to improve the assertions in the unit tests. The test cases in AppTest.kt now use the http4k's strikt assertion API for more robust and readable tests.">
+      <option name="closed" value="true" />
+      <created>1713177575015</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713177575015</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update http4k version and improve test assertions&#10;&#10;The dependencies in build.gradle.kts have been updated to the latest http4k version. Two additional libraries for testing were included to improve the assertions in the unit tests. The test cases in AppTest.kt now use the http4k's strikt assertion API for more robust and readable tests.">
+      <option name="closed" value="true" />
+      <created>1713177595721</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713177595721</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response.">
+      <option name="closed" value="true" />
+      <created>1713178686106</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713178686106</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +270,8 @@
     <MESSAGE value="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development." />
     <MESSAGE value="Refactor HttpHandler and add App test&#10;&#10;The HttpHandler declaration has been moved to the end of the file in App.kt for better code organization. Additionally, a new test file, AppTest.kt, has been added to thoroughly test the application's functionality. This file includes a simple test that invokes a GET request on the '/root' endpoint." />
     <MESSAGE value="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update development environment settings&#10;&#10;This commit updates various .idea/workspace.xml settings and configurations. It includes changes to recently used templates, external system settings, task management, and VCS commit history. This is important to maintain an efficient development workflow, test execution settings and track the project's history effectively." />
+    <MESSAGE value="Update http4k version and improve test assertions&#10;&#10;The dependencies in build.gradle.kts have been updated to the latest http4k version. Two additional libraries for testing were included to improve the assertions in the unit tests. The test cases in AppTest.kt now use the http4k's strikt assertion API for more robust and readable tests." />
+    <MESSAGE value="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response." />
   </component>
 </project>

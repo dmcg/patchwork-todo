@@ -10,12 +10,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import strikt.api.expectThat
 import strikt.assertions.isEqualTo
+import strikt.assertions.isNotEqualTo
 
 @ExtendWith(ApprovalTest::class)
 class AppTest {
     @Test
     fun test() {
-        val response: Response = handler.invoke(Request(Method.GET, "/root"))
+        val response: Response = routes.invoke(Request(Method.GET, "/"))
 
         expectThat(response) {
             status.isEqualTo(Status.OK)
@@ -26,9 +27,19 @@ class AppTest {
 
     @Test
     fun testToo(approver: Approver) {
-        val response: Response = handler.invoke(Request(Method.GET, "/root"))
+        val response: Response = routes.invoke(Request(Method.GET, "/"))
 
         approver.assertApproved(response)
 
+    }
+
+    @Test
+    fun testTodoItems() {
+        val response: Response = routes.invoke(Request(Method.GET, "/items"))
+
+        expectThat(response) {
+            status.isEqualTo(Status.OK)
+            bodyString.isNotEqualTo("Something happened!!")
+        }
     }
 }
