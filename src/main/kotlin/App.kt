@@ -17,7 +17,9 @@ val rootHandler = { _: Request ->
 
 val Todos.listHandler: HttpHandler
     get() = {
-        Response(Status.OK).body(joinToString())
+        Response(Status.OK).body(
+            this.joinToString(separator = "\n") { it.name }
+        )
     }
 
 val Todos.routes: HttpHandler

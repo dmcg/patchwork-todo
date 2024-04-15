@@ -2,10 +2,8 @@ import java.util.UUID
 
 class Todos(
     items: List<TodoItem>
-) : List<String> by (items.map {
-    it.name
-}) {
-
+) : List<TodoItem> by items {
+    
 }
 
 fun Todos(items: List<String>) = Todos(

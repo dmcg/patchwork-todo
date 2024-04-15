@@ -14,7 +14,7 @@ import strikt.assertions.isEqualTo
 @ExtendWith(ApprovalTest::class)
 class AppTest {
 
-    private val items = Todos(listOf("item1", "item2", "item3"))
+    private val items = Todos(listOf("Learn Kotlin", "Buy milk", "Buy Oreos"))
 
     @Test
     fun testToo(approver: Approver) {
@@ -28,7 +28,7 @@ class AppTest {
 
         expectThat(response) {
             status.isEqualTo(Status.OK)
-            bodyString.isEqualTo(items.joinToString())
+            bodyString.isEqualTo("Learn Kotlin\nBuy milk\nBuy Oreos")
         }
     }
 
