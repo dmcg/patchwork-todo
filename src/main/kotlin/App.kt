@@ -6,7 +6,7 @@ import org.http4k.server.asServer
 
 fun main() {
     println("Something happened!!")
-    val items = listOf("item1", "item2", "item3")
+    val items = Todos(listOf("item1", "item2", "item3"))
     items.routes.asServer(Jetty(8080)).start()
 }
 
@@ -15,12 +15,12 @@ val rootHandler = { _: Request ->
     Response(status = Status.OK).body("Something happened!!")
 }
 
-val List<String>.listHandler: HttpHandler
+val Todos.listHandler: HttpHandler
     get() = {
         Response(Status.OK).body(joinToString())
     }
 
-val List<String>.routes: HttpHandler
+val Todos.routes: HttpHandler
     get() = routes(
         "/" bind Method.GET to rootHandler,
         "/items" bind Method.GET to this.listHandler

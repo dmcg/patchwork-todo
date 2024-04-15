@@ -13,29 +13,18 @@ import strikt.assertions.isEqualTo
 
 @ExtendWith(ApprovalTest::class)
 class AppTest {
-    @Test
-    fun test() {
-        val response: Response = listOf("item1", "item2", "item3").routes.invoke(Request(Method.GET, "/"))
 
-        expectThat(response) {
-            status.isEqualTo(Status.OK)
-            bodyString.isEqualTo("Something happened!!")
-        }
-
-    }
+    private val items = Todos(listOf("item1", "item2", "item3"))
 
     @Test
     fun testToo(approver: Approver) {
-        val response: Response = listOf("item1", "item2", "item3").routes.invoke(Request(Method.GET, "/"))
-
+        val response: Response = items.routes.invoke(Request(Method.GET, "/"))
         approver.assertApproved(response)
-
     }
 
     @Test
     fun testTodoItems() {
-        val items = listOf("item1", "item2", "item3")
-
+        val items = items
         val response: Response = items.routes(Request(Method.GET, "/items"))
 
         expectThat(response) {
