@@ -11,5 +11,5 @@ fun main() {
 }
 
 val handler: HttpHandler = {
-    Response(status = Status.OK).body("Something happened")
+    Response(status = Status.OK).body("Something happened!!")
 }
