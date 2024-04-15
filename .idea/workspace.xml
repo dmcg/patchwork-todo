@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Todos.kt" afterDir="false" />
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Add Todos class and update App.kt and AppTest.kt &#10;&#10;A new Todos class was added in the kotlin files to enhance functionality and improve structuring. Due to this new class, App.kt and AppTest.kt were also modified to replace List with Todos. This allows for future growth and streamlining. Minor changes were made to the workspace.xml and other configurations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Todos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Todos.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713180105845</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add Todos class and update App.kt and AppTest.kt &#10;&#10;A new Todos class was added in the kotlin files to enhance functionality and improve structuring. Due to this new class, App.kt and AppTest.kt were also modified to replace List with Todos. This allows for future growth and streamlining. Minor changes were made to the workspace.xml and other configurations.">
+      <option name="closed" value="true" />
+      <created>1713187630224</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713187630224</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +293,7 @@
     <MESSAGE value="Update http4k version and improve test assertions&#10;&#10;The dependencies in build.gradle.kts have been updated to the latest http4k version. Two additional libraries for testing were included to improve the assertions in the unit tests. The test cases in AppTest.kt now use the http4k's strikt assertion API for more robust and readable tests." />
     <MESSAGE value="Update response message and refactor tests&#10;&#10;The response message in App.kt was updated with an additional exclamation mark. In AppTest.kt, an approval test pattern has been introduced using the Http4k ApprovalTest extension. Instead of duplicating assertions, the response is now verified against an approved response." />
     <MESSAGE value="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update response messaging and refactor tests&#10;&#10;The response message in App.kt was updated by adding an exclamation mark. The test assertions refactoring was accomplished in AppTest.kt using the Http4k ApprovalTest extension, introducing an approval test pattern to compare the response with an approved response. This ensures avoidance of assertions repetition and enhances testing efficiency." />
+    <MESSAGE value="Add Todos class and update App.kt and AppTest.kt &#10;&#10;A new Todos class was added in the kotlin files to enhance functionality and improve structuring. Due to this new class, App.kt and AppTest.kt were also modified to replace List with Todos. This allows for future growth and streamlining. Minor changes were made to the workspace.xml and other configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Todos class and update App.kt and AppTest.kt &#10;&#10;A new Todos class was added in the kotlin files to enhance functionality and improve structuring. Due to this new class, App.kt and AppTest.kt were also modified to replace List with Todos. This allows for future growth and streamlining. Minor changes were made to the workspace.xml and other configurations." />
   </component>
 </project>

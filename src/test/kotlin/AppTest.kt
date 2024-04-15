@@ -24,12 +24,16 @@ class AppTest {
 
     @Test
     fun testTodoItems() {
-        val items = items
         val response: Response = items.routes(Request(Method.GET, "/items"))
 
         expectThat(response) {
             status.isEqualTo(Status.OK)
             bodyString.isEqualTo(items.joinToString())
         }
+    }
+
+    @Test
+    fun deleteItemFromToDo() {
+       items.routes(Request(Method.DELETE, "/items"))
     }
 }
