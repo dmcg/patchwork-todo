@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +53,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -80,11 +70,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.AppTest.executor": "Run",
     "Gradle.Build patchwork-todo.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Tests in 'patchwork-todo.test'.executor": "Run",
     "Kotlin.AppKt.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -101,7 +98,39 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.AppKt">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.AppTest">
+    <configuration name="AppTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;AppTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests in 'patchwork-todo.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -133,6 +162,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AppTest" />
         <item itemvalue="Kotlin.AppKt" />
         <item itemvalue="Gradle.Tests in 'patchwork-todo.test'" />
       </list>
@@ -155,11 +185,32 @@
       <option name="presentableId" value="Default" />
       <updated>1713085699748</updated>
       <workItem from="1713085701264" duration="2281000" />
-      <workItem from="1713170996538" duration="2377000" />
+      <workItem from="1713170996538" duration="3942000" />
     </task>
+    <task id="LOCAL-00001" summary="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
+      <option name="closed" value="true" />
+      <created>1713173439353</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713173439353</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development.">
+      <option name="closed" value="true" />
+      <created>1713173731278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713173731278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add project setup files and base implementation&#10;&#10;This commit includes several foundational project setup files, including Gradle wrapper, .gitignore, .idea configurations, and gradle config files. It also introduces the base implementation for the main Application (App.kt) and relevant build configuration (build.gradle.kts). The setup ensures that the JAVA_HOME system variable is set correctly and that the project uses the correct Java version within Gradle. This establishes the groundwork necessary for further development." />
   </component>
 </project>
