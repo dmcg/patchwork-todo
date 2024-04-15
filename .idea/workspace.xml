@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Update Todos.kt to use TodoItem and modify constructor&#10;&#10;This change updates the Todos class to utilize the TodoItem data class within its implementation. The constructor is also updated to convert a list of string to a list of TodoItems, thereby improving functionality within the Todos class. Lastly, minor changes are made to workspace.xml and task descriptions.">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/App.kt" afterDir="false" />
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Add deleteItemById function and corresponding test&#10;&#10;A deleteItemById function has been added to the Todos class in Todos.kt. This provides a way to remove items from the Todos list by their unique ID. In addition, a new TodosTests.kt file has been created, which includes a test to verify the new functionality. The test checks that trying to delete an item not present in the list will be ignored.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Todos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Todos.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/AppTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TodosTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/TodosTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +296,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713191442815</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update Todos class to utilize TodoItem&#10;&#10;Changed the Todos class to use the TodoItem data class, hence increasing its functionality. The constructor was also modified to convert a list of strings to a list of TodoItems. Minor adjustments were made to workspace.xml and task descriptions.">
+      <option name="closed" value="true" />
+      <created>1713193086017</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713193086017</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add deleteItemById function and corresponding test&#10;&#10;A deleteItemById function has been added to the Todos class in Todos.kt. This provides a way to remove items from the Todos list by their unique ID. In addition, a new TodosTests.kt file has been created, which includes a test to verify the new functionality. The test checks that trying to delete an item not present in the list will be ignored.">
+      <option name="closed" value="true" />
+      <created>1713194254029</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713194254029</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +328,8 @@
     <MESSAGE value="Add Todos class and update App.kt and AppTest.kt &#10;&#10;A new Todos class was added in the kotlin files to enhance functionality and improve structuring. Due to this new class, App.kt and AppTest.kt were also modified to replace List with Todos. This allows for future growth and streamlining. Minor changes were made to the workspace.xml and other configurations." />
     <MESSAGE value="Add TodoItem class and update Todos.kt and AppTest.kt&#10;&#10;The commit introduces a new TodoItem data class in Todos.kt, and adds a deleteItemFromToDo test in AppTest.kt. This enhances the application's structure and adds more functionality to the testing process. There are also minor changes to workspace.xml and other configurations." />
     <MESSAGE value="Update Todos.kt to use TodoItem and modify constructor&#10;&#10;This change updates the Todos class to utilize the TodoItem data class within its implementation. The constructor is also updated to convert a list of string to a list of TodoItems, thereby improving functionality within the Todos class. Lastly, minor changes are made to workspace.xml and task descriptions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Todos.kt to use TodoItem and modify constructor&#10;&#10;This change updates the Todos class to utilize the TodoItem data class within its implementation. The constructor is also updated to convert a list of string to a list of TodoItems, thereby improving functionality within the Todos class. Lastly, minor changes are made to workspace.xml and task descriptions." />
+    <MESSAGE value="Update Todos class to utilize TodoItem&#10;&#10;Changed the Todos class to use the TodoItem data class, hence increasing its functionality. The constructor was also modified to convert a list of strings to a list of TodoItems. Minor adjustments were made to workspace.xml and task descriptions." />
+    <MESSAGE value="Add deleteItemById function and corresponding test&#10;&#10;A deleteItemById function has been added to the Todos class in Todos.kt. This provides a way to remove items from the Todos list by their unique ID. In addition, a new TodosTests.kt file has been created, which includes a test to verify the new functionality. The test checks that trying to delete an item not present in the list will be ignored." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deleteItemById function and corresponding test&#10;&#10;A deleteItemById function has been added to the Todos class in Todos.kt. This provides a way to remove items from the Todos list by their unique ID. In addition, a new TodosTests.kt file has been created, which includes a test to verify the new functionality. The test checks that trying to delete an item not present in the list will be ignored." />
   </component>
 </project>
