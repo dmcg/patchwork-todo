@@ -1,10 +1,16 @@
 import java.util.UUID
 
 class Todos(
-    listOf: List<String>
-) : List<String> by listOf {
+    items: List<TodoItem>
+) : List<String> by (items.map {
+    it.name
+}) {
 
 }
+
+fun Todos(items: List<String>) = Todos(
+    items.map { name -> TodoItem(UUID.randomUUID(), name) }
+)
 
 data class TodoItem(
     val id: UUID,
