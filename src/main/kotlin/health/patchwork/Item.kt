@@ -1,5 +1,5 @@
 package health.patchwork
 
-class Item(name: String) {
+class Item(val name: String) {
 
 }

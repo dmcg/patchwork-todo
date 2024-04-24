@@ -18,14 +18,12 @@ class Tests {
 
     @Test
     fun listToDos() {
-        val anItem = Item("Buy Milk")
-        val secondItem = Item("Buy Coffee")
-        val toDos: List<Item> = listOf(anItem, secondItem)
+        val toDos: List<Item> = listOf(Item("Buy Milk"), Item("Buy Coffee"))
+        val handler: HttpHandler = toDos.handler()
 
-        val expectedResponse = Response(Status.OK).body("Buy Milk\nBuy Coffee")
-        val handler: HttpHandler = TODO()
-        val response = handler(Request(Method.GET, "/listToDos"))
-
-        assertEquals(expectedResponse, response)
+        assertEquals(
+            Response(Status.OK).body("Buy Milk\nBuy Coffee"),
+            handler(Request(Method.GET, "/listToDos"))
+        )
     }
 }
