@@ -1,9 +1,7 @@
 package health.patchwork
 
-import org.http4k.core.Method
-import org.http4k.core.Request
-import org.http4k.core.Response
-import org.http4k.core.Status
+import org.http4k.core.*
+import org.http4k.filter.ServerFilters
 import org.http4k.lens.Path
 import org.http4k.routing.bind
 import org.http4k.routing.routes
@@ -19,11 +17,14 @@ fun main() {
     toDos.handler().asServer(Undertow(8080)).start()
 }
 
-fun MutableList<Item>.handler() = routes(
+fun MutableList<Item>.handler() =
+    ServerFilters.CatchAll().then(
+    routes(
     "/" bind Method.GET to rootHandler,
     "/listToDos" bind Method.GET to listHandler(),
     "/listToDos/{id}" bind Method.GET to itemHandler(),
     "/listToDos" bind Method.POST to addHandler()
+    )
 )
 
 private val rootHandler =  {request: Request -> Response(Status.OK).body("hello")}
@@ -34,9 +35,13 @@ private fun List<Item>.listHandler(): (Request) -> Response = { request: Request
 
 private fun MutableList<Item>.addHandler(): (Request) -> Response = { request: Request ->
     val name = request.bodyString()
-    val newItem = Item(UUID.randomUUID(), name)
-    this += newItem
-    Response(Status.CREATED).body(newItem.id.toString())
+    if (name.isNotBlank()) {
+        val newItem = Item(UUID.randomUUID(), name)
+        this += newItem
+        Response(Status.CREATED).body(newItem.id.toString())
+    } else {
+        Response(Status.BAD_REQUEST)
+    }
 }
 
 val idLens = Path.of("id")

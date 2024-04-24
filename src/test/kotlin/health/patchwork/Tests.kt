@@ -69,4 +69,14 @@ class Tests {
         assertDoesNotThrow { UUID.fromString(response.bodyString()) }
         assertTrue(toDos.any { it.name == "Buy Sugar" })
     }
+    @Test
+    fun `it should fail with blank name`() {
+        assertEquals(2, toDos.size)
+        val response = handler(Request(Method.POST, "/listToDos"))
+        assertEquals(
+            Status.BAD_REQUEST,
+            response.status
+        )
+        assertEquals(2, toDos.size)
+    }
 }
