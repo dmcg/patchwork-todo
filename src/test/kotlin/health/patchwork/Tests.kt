@@ -40,7 +40,7 @@ class Tests {
     fun `list to do with wrong id format`() {
         val wrongFormatId = -1
         assertEquals(
-            Response(Status.BAD_REQUEST).body("Invalid UUID string: -1"),
+            Response(Status.BAD_REQUEST).body("Invalid UUID string"),
             handler(Request(Method.GET, "/listToDos/$wrongFormatId"))
         )
     }
