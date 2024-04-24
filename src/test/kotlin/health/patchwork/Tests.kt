@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class Tests {
+    val toDos: List<Item> = listOf(Item("Buy Milk"), Item("Buy Coffee"))
+    val handler: HttpHandler = toDos.handler()
     @Test
     fun test() {
         println("Hello world!")
@@ -14,13 +16,11 @@ class Tests {
     fun testHandler(){
         val response = handler(Request(Method.GET, "/"))
         assertEquals(Status.OK, response.status)
+        assertEquals("hello", response.bodyString())
     }
 
     @Test
     fun listToDos() {
-        val toDos: List<Item> = listOf(Item("Buy Milk"), Item("Buy Coffee"))
-        val handler: HttpHandler = toDos.handler()
-
         assertEquals(
             Response(Status.OK).body("Buy Milk\nBuy Coffee"),
             handler(Request(Method.GET, "/listToDos"))
