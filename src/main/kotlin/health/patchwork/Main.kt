@@ -12,23 +12,31 @@ import org.http4k.server.asServer
 import java.util.*
 
 fun main() {
-    val toDos: List<Item> = listOf(
+    val toDos: MutableList<Item> = mutableListOf(
         Item(UUID.randomUUID(), "Buy Milk"),
         Item(UUID.randomUUID(),"Buy Coffee")
     )
     toDos.handler().asServer(Undertow(8080)).start()
 }
 
-fun List<Item>.handler() = routes(
+fun MutableList<Item>.handler() = routes(
     "/" bind Method.GET to rootHandler,
     "/listToDos" bind Method.GET to listHandler(),
-    "/listToDos/{id}" bind Method.GET to itemHandler()
+    "/listToDos/{id}" bind Method.GET to itemHandler(),
+    "/listToDos" bind Method.POST to addHandler()
 )
 
 private val rootHandler =  {request: Request -> Response(Status.OK).body("hello")}
 
 private fun List<Item>.listHandler(): (Request) -> Response = { request: Request ->
     Response(Status.OK).body(this.joinToString("\n") { it.name })
+}
+
+private fun MutableList<Item>.addHandler(): (Request) -> Response = { request: Request ->
+    val name = request.bodyString()
+    val newItem = Item(UUID.randomUUID(), name)
+    this += newItem
+    Response(Status.CREATED).body(newItem.id.toString())
 }
 
 val idLens = Path.of("id")
