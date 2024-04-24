@@ -7,10 +7,6 @@ import kotlin.test.assertEquals
 class Tests {
     val toDos: List<Item> = listOf(Item("Buy Milk"), Item("Buy Coffee"))
     val handler: HttpHandler = toDos.handler()
-    @Test
-    fun test() {
-        println("Hello world!")
-    }
 
     @Test
     fun testHandler(){
