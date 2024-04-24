@@ -35,7 +35,11 @@ private fun List<Item>.listHandler(): (Request) -> Response = { request: Request
 val idLens = Path.of("id")
 
 private fun List<Item>.itemHandler(): (Request) -> Response = { request: Request ->
-    val id = UUID.fromString(idLens.extract(request))
-    val item: Item = this.find { it.id == id }!!
-    Response(Status.OK).body(item.name)
+    try {
+        val id = UUID.fromString(idLens.extract(request))
+        val item: Item = this.find { it.id == id }!!
+        Response(Status.OK).body(item.name)
+    } catch (ex : IllegalArgumentException) {
+        Response(Status.BAD_REQUEST).body(ex.message!!)
+    }
 }
