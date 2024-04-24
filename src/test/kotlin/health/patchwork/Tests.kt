@@ -44,4 +44,13 @@ class Tests {
             handler(Request(Method.GET, "/listToDos/$wrongFormatId"))
         )
     }
+
+    @Test
+    fun `list to do with missing id`() {
+        val missingUUID = UUID.randomUUID()
+        assertEquals(
+            Response(Status.NOT_FOUND),
+            handler(Request(Method.GET, "/listToDos/$missingUUID"))
+        )
+    }
 }
