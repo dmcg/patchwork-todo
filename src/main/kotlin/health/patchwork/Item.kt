@@ -1,5 +1,8 @@
 package health.patchwork
 
-class Item(val name: String) {
+import java.util.UUID
 
-}
+class Item(
+    val id: UUID,
+    val name: String
+)
