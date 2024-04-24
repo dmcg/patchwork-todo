@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="add routes">
+    <list default="true" id="ad71ba9e-e3a2-40ee-b19e-dc2d0af587aa" name="Changes" comment="Add itemHandler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/health/patchwork/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/health/patchwork/Item.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/health/patchwork/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/health/patchwork/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/health/patchwork/Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/health/patchwork/Tests.kt" afterDir="false" />
     </list>
@@ -85,6 +84,9 @@
     "Gradle.Tests.executor": "Run",
     "Gradle.Tests.testHandler.executor": "Run",
     "JUnit.All in patchwork-todo.test.executor": "Run",
+    "JUnit.Tests.executor": "Run",
+    "JUnit.Tests.list to do with wrong id format.executor": "Run",
+    "JUnit.Tests.listNonExistentToDo.executor": "Run",
     "Kotlin.AppKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -117,7 +119,7 @@
       <recent name="health.patchwork" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in patchwork-todo.test">
+  <component name="RunManager" selected="JUnit.Tests">
     <configuration name="All in patchwork-todo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="patchwork-todo.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -126,9 +128,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AppKt" />
-      <module name="patchwork-todo.main" />
+    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="health.patchwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="health.patchwork" />
+      <option name="MAIN_CLASS_NAME" value="health.patchwork.Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.list to do with wrong id format" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="health.patchwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="health.patchwork" />
+      <option name="MAIN_CLASS_NAME" value="health.patchwork.Tests" />
+      <option name="METHOD_NAME" value="list to do with wrong id format" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.listNonExistentToDo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patchwork-todo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="health.patchwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="health.patchwork" />
+      <option name="MAIN_CLASS_NAME" value="health.patchwork.Tests" />
+      <option name="METHOD_NAME" value="listNonExistentToDo" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,9 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.Tests.list to do with wrong id format" />
+        <item itemvalue="JUnit.Tests.listNonExistentToDo" />
         <item itemvalue="JUnit.All in patchwork-todo.test" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.AppKt" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +211,7 @@
       <workItem from="1713085701264" duration="2281000" />
       <workItem from="1713170996538" duration="2377000" />
       <workItem from="1713948195018" duration="350000" />
-      <workItem from="1713948561816" duration="13497000" />
+      <workItem from="1713948561816" duration="14399000" />
     </task>
     <task id="LOCAL-00001" summary="Add workspace.xml to .gitignore&#10;&#10;The .idea/workspace.xml file, which is automatically generated by the IntelliJ IDEA, has been added to the .gitignore file. This prevents it from being tracked by git, as it contains workspace specific settings that are not necessary for the repository.">
       <option name="closed" value="true" />
@@ -225,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713963193472</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add itemHandler">
+      <option name="closed" value="true" />
+      <created>1713964487199</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713964487199</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +303,7 @@
     <MESSAGE value="toDo handler" />
     <MESSAGE value="Split handler" />
     <MESSAGE value="add routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add routes" />
+    <MESSAGE value="Add itemHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add itemHandler" />
   </component>
 </project>

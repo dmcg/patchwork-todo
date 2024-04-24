@@ -35,4 +35,13 @@ class Tests {
             handler(Request(Method.GET, "/listToDos/$coffeeId"))
         )
     }
+
+    @Test
+    fun `list to do with wrong id format`() {
+        val wrongFormatId = -1
+        assertEquals(
+            Response(Status.BAD_REQUEST).body("Invalid UUID string: -1"),
+            handler(Request(Method.GET, "/listToDos/$wrongFormatId"))
+        )
+    }
 }
