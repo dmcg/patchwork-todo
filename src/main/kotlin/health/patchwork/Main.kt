@@ -37,13 +37,12 @@ private fun List<Item>.itemHandler(): (Request) -> Response =
     { request: Request ->
         try {
             val id = UUID.fromString(idLens.extract(request))
-            val item: Item? = this.find { it.id == id }
-            if (item == null)
-                Response(Status.NOT_FOUND)
-            else
-                Response(Status.OK).body(item.name)
+            when (val item = find { it.id == id }) {
+                null -> Response(Status.NOT_FOUND)
+                else ->Response(Status.OK).body(item.name)
+            }
         } catch (ex: IllegalArgumentException) {
-            Response(Status.BAD_REQUEST).body(ex.message!!)
+            Response(Status.BAD_REQUEST).body(ex.message ?: error("Unexpected null exception message"))
         }
     }
 
