@@ -1,12 +1,15 @@
 package health.patchwork
 
 import org.http4k.core.*
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 import java.util.*
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 
 class Tests {
-    val toDos: List<Item> = listOf(
+    val toDos: MutableList<Item> = mutableListOf(
         Item(UUID.randomUUID(),"Buy Milk"),
         Item(UUID.randomUUID(),"Buy Coffee")
     )
@@ -52,5 +55,18 @@ class Tests {
             Response(Status.NOT_FOUND),
             handler(Request(Method.GET, "/listToDos/$missingUUID"))
         )
+    }
+
+    @Test
+    fun `it should add posted item`() {
+        assertFalse(toDos.any { it.name == "Buy Sugar" })
+
+        val response = handler(Request(Method.POST, "/listToDos").body("Buy Sugar"))
+        assertEquals(
+            Status.CREATED,
+            response.status
+        )
+        assertDoesNotThrow { UUID.fromString(response.bodyString()) }
+        assertTrue(toDos.any { it.name == "Buy Sugar" })
     }
 }
