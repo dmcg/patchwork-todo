@@ -9,7 +9,8 @@ import org.http4k.server.asServer
 
 fun main() {
     println("Hello World")
-    val response = Response(Status.OK)
-    val handler = { request: Request ->  response }
     handler.asServer(Undertow(port = 8080)).start()
 }
+
+private val response = Response(Status.OK).body("Hello World")
+val handler = { request: Request ->  response }
