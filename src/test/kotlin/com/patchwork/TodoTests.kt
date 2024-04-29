@@ -38,4 +38,13 @@ class TodoTests {
         }
         expectThat(items).hasSize(1).and { get { first().name }.isEqualTo("Buy beer")  }
     }
+
+    @Test
+    fun `returns a single item by ID`(){
+        items.addAll(listOf(ToDoItem("Buy milk"), ToDoItem("Buy bread")))
+        expectThat(client(Request(Method.GET, "/items/${items.first().id}"))) {
+            status.isEqualTo(Status.OK)
+            bodyString.isEqualTo("Buy milk")
+        }
+    }
 }
