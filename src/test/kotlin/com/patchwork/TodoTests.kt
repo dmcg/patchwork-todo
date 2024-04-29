@@ -13,7 +13,7 @@ class TodoTests {
     @Test
     fun test() {
         val client: HttpHandler = ApacheClient()
-        val response = client(Request(Method.GET, "http://example.com"))
+        val response = client(Request(Method.GET, "http://localhost:8080/"))
         println(response)
         assertEquals(Status.OK, response.status)
     }

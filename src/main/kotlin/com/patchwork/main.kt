@@ -4,9 +4,12 @@ import org.http4k.core.HttpHandler
 import org.http4k.core.Request
 import org.http4k.core.Response
 import org.http4k.core.Status
+import org.http4k.server.Undertow
+import org.http4k.server.asServer
 
 fun main() {
     println("Hello World")
     val response = Response(Status.OK)
     val handler = { request: Request ->  response }
+    handler.asServer(Undertow(port = 8080)).start()
 }
