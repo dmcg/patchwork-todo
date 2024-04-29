@@ -8,13 +8,12 @@ import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
 class TodoTests {
-
     @Test
     fun test() {
-        val client: HttpHandler = handler
+        val items = listOf(ToDoItem("BTW Buy milk"))
+        val client: HttpHandler = handler(items)
         val response = client(Request(Method.GET, "http://localhost:8080/"))
-        println(response)
         assertEquals(Status.OK, response.status)
-        assertEquals("Hello World", response.bodyString())
+        assertEquals("BTW Buy milk", response.bodyString())
     }
 }

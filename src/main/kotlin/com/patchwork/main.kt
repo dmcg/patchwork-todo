@@ -8,9 +8,15 @@ import org.http4k.server.Undertow
 import org.http4k.server.asServer
 
 fun main() {
-    println("Hello World")
     handler.asServer(Undertow(port = 8080)).start()
 }
 
-private val response = Response(Status.OK).body("Hello World")
+private val response = Response(Status.OK).body("BTW Buy milk")
 val handler = { request: Request ->  response }
+fun handler(items: List<ToDoItem>): HttpHandler {
+    return { request: Request -> Response(Status.OK).body(items.first().name) }
+}
+
+data class ToDoItem(val name: String) {
+
+}
