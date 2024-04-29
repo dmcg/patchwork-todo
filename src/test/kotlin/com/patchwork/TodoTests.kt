@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test
 import strikt.api.expectThat
 import strikt.assertions.hasSize
 import strikt.assertions.isEqualTo
+import java.util.UUID
 
 class TodoTests {
     private val items = mutableListOf<ToDoItem>()
@@ -24,7 +25,8 @@ class TodoTests {
 
     @Test
     fun `returns multiple items in body`() {
-        items.addAll(listOf(ToDoItem("Buy milk"), ToDoItem("Buy bread")))
+        client(Request(Method.POST, "/items").body("Buy milk"))
+        client(Request(Method.POST, "/items").body("Buy bread"))
         expectThat(client(Request(Method.GET, "/items"))) {
             status.isEqualTo(Status.OK)
             bodyString.isEqualTo("Buy milk\nBuy bread")
@@ -36,15 +38,38 @@ class TodoTests {
         expectThat(client(Request(Method.POST, "/items").body("Buy beer"))) {
             status.isEqualTo(Status.CREATED)
         }
-        expectThat(items).hasSize(1).and { get { first().name }.isEqualTo("Buy beer")  }
+        expectThat(client(Request(Method.GET, "/items"))) {
+            status.isEqualTo(Status.OK)
+            bodyString.isEqualTo("Buy beer")
+        }
     }
 
     @Test
     fun `returns a single item by ID`(){
-        items.addAll(listOf(ToDoItem("Buy milk"), ToDoItem("Buy bread")))
+        client(Request(Method.POST, "/items").body("Buy milk"))
+        client(Request(Method.POST, "/items").body("Buy bread"))
         expectThat(client(Request(Method.GET, "/items/${items.first().id}"))) {
             status.isEqualTo(Status.OK)
             bodyString.isEqualTo("Buy milk")
+        }
+    }
+
+    @Test
+    fun `returns not found when no single item by ID`(){
+        client(Request(Method.POST, "/items").body("Buy milk"))
+        client(Request(Method.POST, "/items").body("Buy bread"))
+        expectThat(client(Request(Method.GET, "/items/${UUID.randomUUID()}"))) {
+            status.isEqualTo(Status.NOT_FOUND)
+            bodyString.isEqualTo("")
+        }
+    }
+
+    @Test
+    fun `returns bad request when not a uuid`(){
+        client(Request(Method.POST, "/items").body("Buy milk"))
+        client(Request(Method.POST, "/items").body("Buy bread"))
+        expectThat(client(Request(Method.GET, "/items/banana"))) {
+            status.isEqualTo(Status.BAD_REQUEST)
         }
     }
 }
