@@ -15,7 +15,10 @@ fun main() {
 fun MutableList<ToDoItem>.toHandler(): HttpHandler {
     return { request ->
         when (request.method) {
-            Method.GET -> Response(Status.OK).body(joinToString("\n") { it.name })
+            Method.GET -> {
+                val l = function()
+                l(request)
+            }
             Method.POST -> {
                 this.add(ToDoItem(request.bodyString()))
                 Response(Status.CREATED)
@@ -25,5 +28,8 @@ fun MutableList<ToDoItem>.toHandler(): HttpHandler {
         }
     }
 }
+
+private fun MutableList<ToDoItem>.function():HttpHandler =
+    { Response(Status.OK).body(joinToString("\n") { it.name }) }
 
 data class ToDoItem(val name: String)
