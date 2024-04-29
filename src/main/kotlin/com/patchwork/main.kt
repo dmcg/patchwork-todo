@@ -13,10 +13,10 @@ fun main() {
 
 fun handler(items: List<ToDoItem>): HttpHandler {
     return {
-        when (val first: ToDoItem? = items.firstOrNull()) {
-            null -> Response(Status.OK)
-            else -> Response(Status.OK).body(first.name)
-        }
+        val first: ToDoItem? = items.firstOrNull()
+        first?.let {
+            Response(Status.OK).body(first.name)
+        } ?:Response(Status.OK)
     }
 }
 
