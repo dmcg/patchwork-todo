@@ -15,6 +15,7 @@ dependencies {
     implementation("org.http4k:http4k-server-undertow")
     implementation("org.http4k:http4k-client-apache")
     testImplementation(kotlin("test"))
+    implementation("org.http4k:http4k-testing-strikt")
 }
 
 tasks.test {

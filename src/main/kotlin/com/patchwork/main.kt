@@ -8,15 +8,12 @@ import org.http4k.server.asServer
 
 fun main() {
     val items = emptyList<ToDoItem>()
-    handler(items).asServer(Undertow(port = 8080)).start()
+    items.toHandler().asServer(Undertow(port = 8080)).start()
 }
 
-fun handler(items: List<ToDoItem>): HttpHandler {
+fun List<ToDoItem>.toHandler(): HttpHandler {
     return {
-        val first: ToDoItem? = items.firstOrNull()
-        first?.let {
-            Response(Status.OK).body(first.name)
-        } ?:Response(Status.OK)
+        Response(Status.OK).body(firstOrNull()?.name ?: "")
     }
 }
 
