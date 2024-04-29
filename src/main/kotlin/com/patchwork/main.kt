@@ -1,9 +1,8 @@
 package com.patchwork
 
-import org.http4k.core.HttpHandler
-import org.http4k.core.Method
-import org.http4k.core.Response
-import org.http4k.core.Status
+import org.http4k.core.*
+import org.http4k.routing.bind
+import org.http4k.routing.routes
 import org.http4k.server.Undertow
 import org.http4k.server.asServer
 
@@ -12,24 +11,17 @@ fun main() {
     items.toHandler().asServer(Undertow(port = 8080)).start()
 }
 
-fun MutableList<ToDoItem>.toHandler(): HttpHandler {
-    return { request ->
-        when (request.method) {
-            Method.GET -> {
-                val l = function()
-                l(request)
-            }
-            Method.POST -> {
-                this.add(ToDoItem(request.bodyString()))
-                Response(Status.CREATED)
-            }
+fun MutableList<ToDoItem>.toHandler(): HttpHandler = routes(
+    "/items" bind Method.GET to this.toGetHandler(),
+    "/items" bind Method.POST to this.toPostHandler()
+)
 
-            else -> TODO()
-        }
-    }
+private fun MutableList<ToDoItem>.toPostHandler() = { request: Request ->
+    this.add(ToDoItem(request.bodyString()))
+    Response(Status.CREATED)
 }
 
-private fun MutableList<ToDoItem>.function():HttpHandler =
+private fun List<ToDoItem>.toGetHandler():HttpHandler =
     { Response(Status.OK).body(joinToString("\n") { it.name }) }
 
 data class ToDoItem(val name: String)
