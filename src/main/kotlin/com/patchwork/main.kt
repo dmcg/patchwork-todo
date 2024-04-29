@@ -13,7 +13,7 @@ fun main() {
 
 fun List<ToDoItem>.toHandler(): HttpHandler {
     return {
-        Response(Status.OK).body(firstOrNull()?.name ?: "")
+        Response(Status.OK).body(joinToString("\n") { it.name })
     }
 }
 

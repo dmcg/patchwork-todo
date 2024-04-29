@@ -11,10 +11,11 @@ import strikt.api.expectThat
 import strikt.assertions.isEqualTo
 
 class TodoTests {
+    val items = mutableListOf<ToDoItem>()
+    val client: HttpHandler = items.toHandler()
+
     @Test
     fun `returns empty body for no items`() {
-        val items = emptyList<ToDoItem>()
-        val client: HttpHandler = items.toHandler()
         expectThat(client(Request(Method.GET, "http://localhost:8080/"))) {
             status.isEqualTo(Status.OK)
             bodyString.isEqualTo("")
@@ -22,12 +23,11 @@ class TodoTests {
     }
 
     @Test
-    fun `returns items in body for each items`() {
-        val items = listOf(ToDoItem("BTW Buy milk"))
-        val client: HttpHandler = items.toHandler()
+    fun `returns multiple items in body`() {
+        items.addAll(listOf(ToDoItem("Buy milk"), ToDoItem("Buy bread")))
         expectThat(client(Request(Method.GET, "http://localhost:8080/"))) {
             status.isEqualTo(Status.OK)
-            bodyString.isEqualTo("BTW Buy milk")
+            bodyString.isEqualTo("Buy milk\nBuy bread")
         }
     }
 }
